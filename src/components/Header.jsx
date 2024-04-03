@@ -1,7 +1,15 @@
 import React from "react";
 import second from "../assets/crypto-coin.png";
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = ({ setMt, setModalD }) => {
+  const openS = () => {
+    setModalD(true)
+    setMt("s");
+  };
+  const openL = () => {
+    setModalD(true)
+    setMt("l");
+  };
   return (
     <header className="bg-darkenBlack backdrop-blur-md">
       <div className="containerb flex items-center justify-between h-20">
@@ -15,10 +23,16 @@ const Header = () => {
         />
 
         <div className="flex items-center gap-x-5">
-          <button className="px-5 py-4 bg-red-500 rounded-xl text-white montserrat text-sm font-bold tracking-widest">
+          <button
+            onClick={openL}
+            className="px-5 py-4 bg-red-500 rounded-xl text-white montserrat text-sm font-bold tracking-widest"
+          >
             Login
           </button>
-          <button className="px-5 py-4 bg-green-500 rounded-xl text-white montserrat text-sm font-bold tracking-widest">
+          <button
+            onClick={openS}
+            className="px-5 py-4 bg-green-500 rounded-xl text-white montserrat text-sm font-bold tracking-widest"
+          >
             Sign Up
           </button>
         </div>

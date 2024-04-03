@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Route,
   RouterProvider,
@@ -10,9 +10,20 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 
 const App = () => {
+  const [modalD, setModalD] = useState(false);
+  const [mT, setMt] = useState("s");
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route element={<Mainlayout />}>
+      <Route
+        element={
+          <Mainlayout
+            setMt={setMt}
+            mT={mT}
+            modalD={modalD}
+            setModalD={setModalD}
+          />
+        }
+      >
         <Route index element={<Home />} />
         <Route path="/:name" element={<Detail />} />
       </Route>

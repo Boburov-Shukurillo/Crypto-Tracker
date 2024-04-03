@@ -51,3 +51,7 @@ body {
   backdrop-filter: blur(10px);
   background: #1418277c;
 }
+
+.bg{
+  background-image: url(./assets/cryptoBg.png);
+}
