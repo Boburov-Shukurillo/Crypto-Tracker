@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import up from "../assets/up.svg";
 import down from "../assets/down-line.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 const Home = () => {
   const API =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc";
   let [valuta, setvalut] = useState([]);
-  let [loader, setLoader] = useState(false);
   useEffect(() => {
     axios.get(API).then((res) => {
       setvalut(res.data);
@@ -14,6 +15,39 @@ const Home = () => {
   }, []);
   return (
     <div className="containerb">
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 5000 }}
+        spaceBetween={10}
+        slidesPerView={3}
+        className="tradeSwiper"
+      >
+        {valuta.slice(0, 6).map((coin,index) => {
+          return (
+            <SwiperSlide
+              key={coin.id}
+              className="text-xl montserrat font-bold text-white rounded-2xl border-2 border-white/20 p-5 flex items-center justify-between"
+            >
+              <div className="w-1/3 flex items-center justify-between">
+                <img
+                  src={coin.image}
+                  className="w-20"
+                  alt={coin.name + " png"}
+                />
+                <div className="w-1/4">
+                  <h2>{coin.name}</h2>
+                  <p className="text-sm text-white/60">{coin.current_price}$</p>
+                </div>
+              </div>
+              {coin.market_cap_change_percentage_24h > 0 ? (
+                <img src={up} alt="up icon" />
+              ) : (index%2===0?(<img src={down} alt="up icon" />):(<img src={down} alt="up icon" />)
+              )}
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+
       <ul className="flex flex-col gap-y-2.5 items-center py-10">
         {valuta.map((e) => {
           return (
