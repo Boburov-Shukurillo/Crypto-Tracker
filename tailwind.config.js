@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        darkenBlack: "#404258",
-        darkenGray: "#474E68",
+        darkenBlack: "#141827",
+        darkenGray: "#282A3A",
         
       },
     },

@@ -5,3 +5,12 @@
 .containerb {
   @apply w-full max-w-screen-xl px-5 mx-auto;
 }
+
+.montserrat {
+  font-family: Montserrat;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
