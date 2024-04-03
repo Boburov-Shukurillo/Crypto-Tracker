@@ -8,7 +8,7 @@ const Mainlayout = () => {
     <>
       <Header />
 
-      <main className="bg-gradient-to-r from-darkenGray to-darkenBlack">
+      <main className="bg-gradient-to-tr from-darkenGray to-darkenBlack py-20">
         <Outlet />
       </main>
       <Footer />
