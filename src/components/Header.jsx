@@ -1,13 +1,13 @@
 import React from "react";
 import second from "../assets/crypto-coin.png";
 import { Link } from "react-router-dom";
-const Header = ({ setMt, setModalD }) => {
+const Header = ({ setMt, setModalD, searchCoin, setSearchCoin }) => {
   const openS = () => {
-    setModalD(true)
+    setModalD(true);
     setMt("s");
   };
   const openL = () => {
-    setModalD(true)
+    setModalD(true);
     setMt("l");
   };
   return (
@@ -18,6 +18,7 @@ const Header = ({ setMt, setModalD }) => {
         </Link>
         <input
           type="search"
+          onChange={(e) => setSearchCoin(e.target.value)}
           className="w-1/3 bg-darkenBlack/5 border-darkenGray border-2 rounded-xl h-12 px-5 montserrat text-lg text-white"
           placeholder="Search Crypto"
         />

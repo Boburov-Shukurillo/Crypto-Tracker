@@ -4,11 +4,24 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 
-const Mainlayout = ({ modalD, setModalD, mT, setMt }) => {
+const Mainlayout = ({
+  modalD,
+  setModalD,
+  mT,
+  setMt,
+  searchCoin,
+  setSearchCoin,
+}) => {
   return (
     <>
-      <Header modalD={modalD} setModalD={setModalD} setMt={setMt} />
-      <main className="bg-gradient-to-tr from-darkenGray to-darkenBlack flex items-center justify-center">
+      <Header
+        modalD={modalD}
+        searchCoin={searchCoin}
+        setSearchCoin={setSearchCoin}
+        setModalD={setModalD}
+        setMt={setMt}
+      />
+      <main className="bg-gradient-to-tr h-full from-darkenGray to-darkenBlack flex items-center justify-center">
         {modalD && (
           <Modal modalD={modalD} setModalD={setModalD} setMt={setMt} mT={mT} />
         )}

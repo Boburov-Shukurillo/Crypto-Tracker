@@ -7,6 +7,9 @@ export default {
         darkenBlack: "#141827",
         darkenGray: "#282A3A",
       },
+      width: {
+        500: "500px",
+      },
       height: {
         500: "500px",
       },

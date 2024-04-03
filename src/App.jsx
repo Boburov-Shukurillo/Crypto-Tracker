@@ -12,6 +12,7 @@ import Detail from "./pages/Detail";
 const App = () => {
   const [modalD, setModalD] = useState(false);
   const [mT, setMt] = useState("s");
+  const [searchCoin, setSearchCoin] = useState("");
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
@@ -21,10 +22,17 @@ const App = () => {
             mT={mT}
             modalD={modalD}
             setModalD={setModalD}
+            searchCoin={searchCoin}
+            setSearchCoin={setSearchCoin}
           />
         }
       >
-        <Route index element={<Home />} />
+        <Route
+          index
+          element={
+            <Home searchCoin={searchCoin} setSearchCoin={setSearchCoin} />
+          }
+        />
         <Route path="/:name" element={<Detail />} />
       </Route>
     )

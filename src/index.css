@@ -10,6 +10,52 @@
   font-family: Montserrat;
 }
 
+@font-face {
+  font-family: zingDemo;
+  src: url(./fonFamily/ZingRust.ttf);
+}
+
+.zingDemo {
+  font-family: Antema;
+}
+
+.jump {
+  animation: 1.5s jump infinite alternate;
+}
+.jump1 {
+  animation-delay: 0.5s;
+  animation: 1.5s jump1 infinite alternate;
+}
+.jump2 {
+  animation-delay: .7s;
+  animation: 1.5s jump2 infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+@keyframes jump1 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+@keyframes jump2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+
 *::-webkit-scrollbar {
   display: none;
   scroll-behavior: smooth;
@@ -25,7 +71,6 @@ body {
 }
 
 body {
-  background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -39,7 +84,7 @@ body {
   height: 200px;
   overflow: hidden;
 }
-.swiper-wrapper{
+.swiper-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +97,6 @@ body {
   background: #1418277c;
 }
 
-.bg{
+.bg {
   background-image: url(./assets/cryptoBg.png);
 }
