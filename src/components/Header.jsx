@@ -22,7 +22,8 @@ const Header = ({ setMt, setModalD, searchCoin, setSearchCoin }) => {
           className="w-1/3 bg-darkenBlack/5 border-darkenGray border-2 rounded-xl h-12 px-5 montserrat text-lg text-white"
           placeholder="Search Crypto"
         />
-
+        <Link to='/' className="text-white montserrat font-bold">Home</Link>
+        <Link to='/contact' className="text-white montserrat font-bold">Contact</Link>
         <div className="flex items-center gap-x-5">
           <button
             onClick={openL}

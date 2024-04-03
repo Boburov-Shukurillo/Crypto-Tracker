@@ -8,6 +8,7 @@ import {
 import Mainlayout from "./layout/Mainlayout";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const [modalD, setModalD] = useState(false);
@@ -34,6 +35,7 @@ const App = () => {
           }
         />
         <Route path="/:name" element={<Detail />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     )
   );
