@@ -14,6 +14,7 @@ const App = () => {
   const [modalD, setModalD] = useState(false);
   const [mT, setMt] = useState("s");
   const [searchCoin, setSearchCoin] = useState("");
+  const [detailD, setDetailD] = useState([]);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
@@ -31,10 +32,14 @@ const App = () => {
         <Route
           index
           element={
-            <Home searchCoin={searchCoin} setSearchCoin={setSearchCoin} />
+            <Home
+              setDetailD={setDetailD}
+              searchCoin={searchCoin}
+              setSearchCoin={setSearchCoin}
+            />
           }
         />
-        <Route path="/:name" element={<Detail />} />
+        <Route path="/:name" element={<Detail detailD={detailD} />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     )

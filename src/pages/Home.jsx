@@ -8,13 +8,14 @@ import bitCoin from "../assets/Bitcoin-Logo.png";
 import Tron from "../assets/tron.webp";
 import Ertherium from "../assets/erthereum.png";
 import { Link } from "react-router-dom";
-const Home = ({ searchCoin, setSearchCoin }) => {
+const Home = ({ searchCoin, setDetailD }) => {
   const API =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc";
   let [valuta, setvalut] = useState([]);
   useEffect(() => {
     axios.get(API).then((res) => {
       setvalut(res.data);
+      setDetailD(res.data);
     });
   }, []);
   return (
