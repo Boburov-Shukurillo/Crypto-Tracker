@@ -39,14 +39,14 @@ const Home = ({ searchCoin, setDetailD }) => {
                 src={bitCoin}
                 width={400}
                 height={400}
-                className="absolute w-64 h-64 z-10 rounded-full object-cover jump top-20"
+                className="absolute w-64 h-64 rounded-full object-cover jump top-20"
                 alt="bitcoin"
               />
               <img
                 src={Ertherium}
                 width={400}
                 height={400}
-                className="absolute w-60 h-60 z-10 bottom-0 left-16 rounded-full object-cover jump1"
+                className="absolute w-60 h-60 bottom-0 left-16 rounded-full object-cover jump1"
                 alt="bitcoin"
               />
               <img

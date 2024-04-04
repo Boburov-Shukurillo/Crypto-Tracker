@@ -13,6 +13,9 @@ export default {
       height: {
         500: "500px",
       },
+      screens: {
+        950: "950px",
+      },
     },
   },
   plugins: [],
