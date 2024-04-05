@@ -12,10 +12,21 @@ const Detail = ({ detailD }) => {
       setvalut(res.data);
     });
   }, []);
-  
+
   const location = useLocation();
   const getCoin = location.pathname.split("/").join("").toLowerCase();
   const coin = valuta.filter((e) => e.name.toLowerCase() === getCoin);
+  let price = coin.map((e) => e.market_cap_change_percentage_24h)[0];
+  const [color, setColor] = useState("#008000");
+
+  useEffect(() => {
+    if (price < 0) {
+      setColor("#f00");
+    } else {
+      setColor("#0f0");
+    }
+  }, []);
+
   useEffect(() => {
     const ctx = document.getElementById("myChart");
     new Chart(ctx, {
@@ -24,9 +35,11 @@ const Detail = ({ detailD }) => {
         labels: ["1year", "1month", "7d", "24h", "now"],
         datasets: [
           {
-            label: "# of Votes",
+            label: "Crypto ",
             data: [55000, 57340, 52900, 43023, 64600],
             borderWidth: 1,
+            borderColor: color,
+            backgroundColor: color,
           },
         ],
       },

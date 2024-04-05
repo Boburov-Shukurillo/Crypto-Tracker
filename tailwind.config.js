@@ -14,6 +14,7 @@ export default {
         500: "500px",
       },
       screens: {
+        350: "450px",
         950: "950px",
       },
     },
